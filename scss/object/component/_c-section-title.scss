@@ -1,0 +1,19 @@
+// ============================================
+// Component - Section Title
+// ============================================
+
+.c-section-title {
+  color: rgba(55, 55, 55, 0.9);
+  font-size: clamp(68px, 8vw, 130px);
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin: 0 0 -5vw 4vw;
+  position: relative;
+  z-index: 10;
+
+  @include mq-down(pc) {
+    font-size: 12vw;
+    margin: 0 0 -7vw 4vw;
+    text-align: center;
+  }
+}

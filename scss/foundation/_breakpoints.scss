@@ -1,0 +1,20 @@
+$breakpoints: (
+  sp: 480px,
+  tab: 768px,
+  pc: 1024px,
+  wide: 1280px
+);
+
+// min-width（SPファースト）
+@mixin mq($size) {
+  @media screen and (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// max-width
+@mixin mq-down($size) {
+  @media screen and (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
