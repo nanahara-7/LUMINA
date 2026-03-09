@@ -1,3 +1,96 @@
-// ============================================
 // Layout - Footer
-// ============================================
+
+.l-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  color: $color-white;
+  padding: 80px 5%;
+
+  @include mq-down(pc) {
+    flex-direction: column-reverse;
+    padding: 60px 20px;
+  }
+
+  a {
+    color: $color-white;
+  }
+
+  &__info-area {
+    width: 35%;
+
+    @include mq-down(pc) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+
+    @include mq-down(pc) {
+      margin: 0 auto 30px;
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  &__copyright {
+    font-size: 10px;
+  }
+
+  &__menu-area {
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include mq-down(pc) {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 40px;
+    } 
+  }
+
+  &__menu-col {
+    width: 100%;
+    max-width: 130px;
+  }
+
+  &__menu-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__menu-list {
+    li {
+      font-size: 14px;
+      margin-bottom: 20px;
+
+      &::before {
+        content: "-";
+        margin-right: 10px;
+      }
+
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
