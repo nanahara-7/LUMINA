@@ -58,4 +58,17 @@ $(function() {
     $(".l-header__mask").removeClass("active");
   });
 
+  //フェードインアニメーション追加
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        $(entry.target).addClass("is-inview");
+      }
+    });
+  });
+
+  $(".fadein").each(function() {
+    observer.observe(this);
+  });
+
 });
