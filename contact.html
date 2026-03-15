@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LUMINAへのお問い合わせページです。インテリアデザインや空間づくりに関するご相談・お見積もりはお気軽にご連絡ください。" />
+    <link rel="icon" href="img/common/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <title>お問い合わせ | LUMINA</title>
+  </head>
+
+  <body>
+    <header class="l-header" id="header">
+      <p class="l-header__logo">
+        <a href="index.html"> LUMINA </a>
+      </p>
+
+      <div class="c-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- /.c-hamburger -->
+
+      <nav class="c-nav">
+        <ul class="c-nav__list">
+          <li class="c-nav__item c-nav__item--has-dropdown">
+            <span>会社情報</span>
+            <ul class="c-nav__dropdown">
+              <li><a href="company.html#philosophy">企業理念</a></li>
+              <li><a href="company.html#service">事業紹介</a></li>
+              <li><a href="company.html#overview">会社概要</a></li>
+              <li><a href="company.html#access">アクセス</a></li>
+            </ul>
+          </li>
+          <li class="c-nav__item"><a href="products.html">商品一覧</a></li>
+          <li class="c-nav__item"><a href="works.html">実績紹介</a></li>
+          <li class="c-nav__item"><a href="faq.html">よくある質問</a></li>
+          <li class="c-nav__item c-nav__item--contact"><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="l-header__mask"></div>
+      <!-- /.l-header__mask -->
+    </header>
+
+    <div class="p-page-header">
+      <div class="p-page-header__img">
+        <img src="img/webp/contact/mainvisual.webp" alt="LUMINAお問い合わせページのメインビジュアル" />
+      </div>
+      <!-- /.p-page-header__img -->
+      <div class="p-page-header__title-area">
+        <h1 class="p-page-header__title">
+          <span class="p-page-header__en">CONTACT</span>
+          <span class="p-page-header__ja">お問い合わせ</span>
+        </h1>
+      </div>
+      <!-- /.p-page-header__title-area -->
+    </div>
+    <!-- /.p-page-header -->
+
+    <p class="p-contact__lead">お問い合わせ・ご相談はこちらから承っております。<br class="pc" />お気軽にご連絡ください。</p>
+    <!-- /.p-contact__lead -->
+
+    <div class="p-contact-form">
+      <p class="p-contact-form__title">お問い合わせフォーム</p>
+      <!-- /.p-contact-form__title -->
+      <form action="" method="post">
+        <dl>
+          <div class="p-contact-form__item">
+            <dt><label for="kind">お問い合わせ種別</label><span class="c-require">必須</span></dt>
+            <dd>
+              <select name="kind" id="kind">
+                <option value="">選択してください</option>
+                <option value="インテリアについて">インテリアについて</option>
+                <option value="店舗デザインについて">店舗デザインについて</option>
+                <option value="採用について">採用について</option>
+                <option value="取材について">取材について</option>
+                <option value="その他">その他</option></select
+              ><!-- /# -->
+            </dd>
+          </div>
+          <!-- /.p-contact-form__item -->
+          <div class="p-contact-form__item">
+            <dt><label for="name">お名前</label><span class="c-require">必須</span></dt>
+            <dd><input id="name" type="text" name="name" placeholder="山田 太郎" /></dd>
+          </div>
+          <!-- /.p-contact-form__item -->
+          <div class="p-contact-form__item">
+            <dt><label for="mail">メールアドレス</label><span class="c-require">必須</span></dt>
+            <dd><input id="mail" type="email" name="mail" placeholder="xxxxxxxx@xxx.xxxx" /></dd>
+          </div>
+          <!-- /.p-contact-form__item -->
+          <div class="p-contact-form__item">
+            <dt>どこでお知りになりましたか</dt>
+            <dd class="p-contact-form__checkbox-group">
+              <div class="p-contact-form__checkbox-item">
+                <input type="checkbox" name="know[]" id="know-1" value="SNS" />
+                <label for="know-1">SNS</label>
+              </div>
+              <!-- /.p-contact-form__checkbox-item -->
+              <div class="p-contact-form__checkbox-item">
+                <input type="checkbox" name="know[]" id="know-2" value="Google検索" />
+                <label for="know-2">Google検索</label>
+              </div>
+              <!-- /.p-contact-form__checkbox-item -->
+              <div class="p-contact-form__checkbox-item">
+                <input type="checkbox" name="know[]" id="know-3" value="紹介・口コミ" />
+                <label for="know-3">紹介・口コミ</label>
+              </div>
+              <!-- /.p-contact-form__checkbox-item -->
+              <div class="p-contact-form__checkbox-item">
+                <input type="checkbox" name="know[]" id="know-4" value="その他" />
+                <label for="know-4">その他</label>
+              </div>
+              <!-- /.p-contact-form__checkbox-item -->
+            </dd>
+          </div>
+          <!-- /.p-contact-form__item -->
+          <div class="p-contact-form__item">
+            <dt><label for="message">お問い合わせ</label><span class="c-require">必須</span></dt>
+            <dd><textarea id="message" cols="40" rows="8" name="message"></textarea><!-- /# --></dd>
+          </div>
+          <!-- /.p-contact-form__item -->
+        </dl>
+
+        <div class="p-contact-form__privacy">
+          <div class="p-contact-form__privacy-text">
+            <p class="p-contact-form__privacy-title">個人情報の取り扱いについて</p>
+            <!-- /.p-contact-form__privacy-title -->
+            <p>ご入力いただいた個人情報は、お問い合わせへの回答および当社サービスに関するご連絡のみに使用し、第三者への提供は行いません。</p>
+            <ol>
+              <li>1.個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明</li>
+              <li>2.個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明</li>
+              <li>3.個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明</li>
+              <li>4.個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明</li>
+              <li>5.個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明個人情報の取り扱いに関する説明</li>
+            </ol>
+          </div>
+          <!-- /.p-contact-form__privacy-text -->
+          <div class="p-contact-form__privacy-item">
+            <input type="checkbox" name="privacy" id="privacy" value="">
+            <label for="privacy">個人情報の取り扱いに同意する</label>
+          </div>
+          <!-- /.p-contact-form__privacy-item -->
+        </div>
+        <!-- /.p-contact-form__privacy -->
+
+        <input class="p-contact-form__btn" type="submit" name="send" value="送信">
+      </form>
+    </div>
+    <!-- /.p-contact-form -->
+
+    <footer class="l-footer" id="footer">
+      <div class="l-footer__info-area">
+        <a class="l-footer__logo" href=""> <span>LUMINA</span> </a
+        ><!-- /.l-footer__logo -->
+        <div class="l-footer__info">
+          <p>〒999-9999<br />大阪府○○○○○○○○</p>
+          <p>TEL: 09-9999-9999</p>
+        </div>
+        <!-- /.l-footer__info -->
+        <p class="l-footer__copyright">&copy; LUMINA. All Rights Reserved.</p>
+      </div>
+      <!-- /.l-footer__info-area -->
+      <div class="l-footer__menu-area">
+        <div class="l-footer__menu-col">
+          <p class="l-footer__menu-title"><a href="company.html">会社情報</a></p>
+          <ul class="l-footer__menu-list">
+            <li><a href="company.html#philosophy">企業理念</a></li>
+            <li><a href="company.html#service">事業紹介</a></li>
+            <li><a href="company.html#overview">会社概要</a></li>
+            <li><a href="company.html#access">アクセス</a></li>
+          </ul>
+        </div>
+        <!-- /.l-footer__menu-col -->
+
+        <div class="l-footer__menu-col">
+          <p class="l-footer__menu-title"><a href="products.html">商品一覧</a></p>
+          <!-- /.l-footer__menu-title -->
+          <p class="l-footer__menu-title"><a href="works.html">実績紹介</a></p>
+          <!-- /.l-footer__menu-title -->
+        </div>
+        <!-- /.l-footer__menu-col -->
+
+        <div class="l-footer__menu-col">
+          <p class="l-footer__menu-title"><a href="faq.html">よくある質問</a></p>
+          <!-- /.l-footer__menu-title -->
+          <p class="l-footer__menu-title"><a href="contact.html">お問い合わせ</a></p>
+          <!-- /.l-footer__menu-title -->
+        </div>
+        <!-- /.l-footer__menu-col -->
+      </div>
+      <!-- /.l-footer__menu-area -->
+    </footer>
+  </body>
+</html>
