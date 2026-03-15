@@ -1,0 +1,73 @@
+// Project - Page Header
+
+.p-page-header {
+  margin-top: 70px;
+  margin-bottom: 80px;
+  position: relative;
+
+  @include mq-down(pc) {
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+
+      @include mq-down(pc) {
+        height: 280px;
+      }
+    }
+  }
+
+  &__title-area {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(52, 52, 52, 0.9);
+
+    @include mq-down(pc) {
+      max-width: 100%;
+      top: auto;
+      bottom: 0;
+      padding: 14px 5%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+  }
+
+  &__en {
+    display: block;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+
+    @include mq-down(pc) {
+      font-size: 24px;
+    }
+  }
+
+  &__ja {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+
+    @include mq-down(pc) {
+      font-size: 12px;
+    } 
+  }
+}

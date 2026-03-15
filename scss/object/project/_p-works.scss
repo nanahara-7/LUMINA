@@ -3,12 +3,10 @@
 .p-works {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 80px;
   position: relative;
 
   @include mq-down(pc) {
     flex-direction: column;
-    margin-bottom: 40px;
   }
 
   &::after {
@@ -76,3 +74,162 @@
   }
 
 }
+
+.p-works__lead {
+  font-size: 15px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 80px;
+  text-align: center;
+
+  @include mq-down(tab) {
+    margin-bottom: 40px;
+  }
+
+  .pc {
+    @include mq-down(tab) {
+      display: none;
+    }
+  }
+}
+
+.p-works-page__list {
+  margin-bottom: 120px;
+
+  @include mq-down(pc) {
+    margin-bottom: 60px;
+  }
+}
+
+.p-works__item {
+  display: flex;
+  align-items: center;
+  border-top: solid 1px #1f1f1f;
+
+  @include mq-down(tab) {
+    flex-direction: column;
+  }
+
+  &:last-child {
+    border-bottom: solid 1px #1f1f1f;
+  }
+}
+
+.p-works__thumb {
+  width: 50%;
+
+  @include mq-down(tab) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.p-works__body {
+  width: 50%;
+  padding: 0 5%;
+
+  @include mq-down(tab) {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.p-works__name {
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.p-works__info {
+  margin-bottom: 40px;
+
+  &-item {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 6px;
+
+    dt {
+      margin-right: 5px;
+    }
+  }
+}
+
+.p-modal-open {
+  width: 130px;
+  background-color: #1f1f1f;
+  color: $color-white;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 16px;
+  position: relative;
+
+  img {
+    max-width: 16px;
+    position: absolute;
+    top: 11px;
+    right: 11px;
+  }
+}
+
+.p-works__modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 50%);
+  padding: 85px 20px;
+  text-align: center;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 25;
+}
+
+.p-works__modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-works__modal-content {
+  width: 100%;
+  max-width: 860px;
+  background-color: $color-white;
+  display: inline-block;
+  padding: 80px;
+  position: relative;
+
+  @include mq-down(tab) {
+    padding: 40px 20px;
+  }
+}
+
+.p-works__modal-name {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.p-works__modal-img {
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+.p-works__modal-close {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  img {
+    max-width: 25px;
+  }
+}
+
+
+

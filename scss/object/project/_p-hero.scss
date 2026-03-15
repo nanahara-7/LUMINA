@@ -4,12 +4,10 @@
 
 .p-mainvisual {
   height: 600px;
-  margin-bottom: 120px;
   position: relative;
 
     @include mq-down(pc) {
       height: 410px;
-      margin-bottom: 70px;
     }
 
   &__fade-img {

@@ -2,13 +2,16 @@
 // Project - Company
 // ============================================
 
-.p-company {
-  margin-bottom: 120px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 
   @include mq-down(pc) {
-    margin-bottom: 60px;
+    scroll-padding-top: 60px;
   }
+}
 
+.p-company {
   &__flex {
     display: flex;
     align-items: center;
@@ -67,6 +70,374 @@
 
     @include mq-down(pc) {
       margin-bottom: 20px;
+    }
+  }
+}
+
+.p-wrapper {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.p-company-pagelink {
+  display: flex;
+  margin-bottom: 80px;
+
+  @include mq-down(pc) {
+    margin-bottom: 40px;
+  }
+
+  li {
+    width: calc(100% / 4);
+    border-left: solid 1px #1f1f1f;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+
+    @include mq-down(pc) {
+      font-size: 12px;
+    }
+
+    &:last-child {
+      border-right: solid 1px #1f1f1f;
+    }
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid #1f1f1f;
+      margin: 0 auto;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+    }
+
+    a {
+      display: block;
+    }
+  }
+}
+
+.p-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  position: relative;
+
+  @include mq-down(pc) {
+    margin-bottom: 15px;
+  }
+
+  span {
+    max-width: 1000px;
+    display: block;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  &::before {
+    content: "";
+    width: calc((100% - 1000px) / 2);
+    height: 1px;
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 12px;
+    left: 0;
+
+    @include mq-down(pc) {
+      content: none;
+    }
+  }
+}
+
+#philosophy {
+  margin-bottom: 120px;
+  overflow: hidden;
+  position: relative;
+
+  @include mq-down(pc) {
+    margin-bottom: 65px;
+    position: static;
+  }
+}
+
+.p-philosophy {
+  &__img-top {
+    width: clamp(390px, 50vw, 460px);
+    position: absolute;
+    top: 70px;
+    left: 50%;
+
+    @include mq-down(pc) {
+      width: 100%;
+      margin-bottom: 25px;
+      position: static;
+    }
+
+    img {
+      @include mq-down(pc) {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__img-bottom {
+    max-width: 280px;
+    margin: -60px 0 0 10%;
+
+    @include mq-down(pc) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    img {
+      @include mq-down(pc) {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__text-area {
+    width: 70%;
+    background-color: #fafafa;
+    padding: 8% 0 11% 6%;
+    margin-top: 120px;
+
+    @include mq-down(pc) {
+      width: 100%;
+      padding: 24px;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__inner {
+    width: clamp(250px, 34vw, 350px);
+
+    @include mq-down(pc) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 30px;
+  }
+}
+
+#service {
+  margin-bottom: 120px;
+
+  @include mq-down(pc) {
+    margin-bottom: 60px;
+  }
+}
+
+.p-service {
+  &__item {
+    display: flex;
+    align-items: center;
+    box-shadow: 6px 6px 25px #ccc;
+    margin-bottom: 40px;
+
+    @include mq-down(pc) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item--store {
+    flex-direction: row-reverse;
+
+    @include mq-down(pc) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text {
+    width: 44%;
+    padding: 1% 5%;
+
+    @include mq-down(pc) {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__title-ja {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  &__title-en {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    @include mq-down(pc) {
+      font-size: 26px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  &__view-more {
+    font-size: 16px;
+    text-align: right;
+    text-decoration: underline;
+  }
+
+  &__img {
+    width: 56%;
+    overflow: hidden;
+
+    @include mq-down(pc) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+
+      @include mq-down(pc) {
+        height: 250px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__interior-img {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+
+    @include mq-down(pc) {
+      clip-path: none;
+    }
+  }
+
+  &__store-img {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+
+    @include mq-down(pc) {
+      clip-path: none;
+    }
+  }
+}
+
+#overview {
+  margin-bottom: 120px;
+
+  @include mq-down(pc) {
+    margin-bottom: 60px;
+  }
+}
+
+.p-overview__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  dt {
+    width: 200px;
+    border-top: solid 1px #1f1f1f;
+    font-size: 15px;
+    padding: 40px 0;
+
+    @include mq-down(pc) {
+      width: 120px;
+      padding: 20px 0;
+    }
+
+    &:last-of-type {
+      border-bottom: solid 1px #1f1f1f;
+    }
+  }
+
+  dd {
+    width: calc(100% - 200px);
+    border-top: solid 1px #ccc;
+    font-size: 15px;
+    padding: 40px 0;
+    line-height: 1.8;
+
+    @include mq-down(pc) {
+      width: calc(100% - 120px);
+      padding: 20px 0;
+    }
+
+    &:last-of-type {
+      border-bottom: solid 1px #ccc;
+    }
+  }
+}
+
+#access {
+  margin-bottom: 120px;
+
+  @include mq-down(pc) {
+    margin-bottom: 60px;
+  }
+}
+
+.p-access {
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+
+    @include mq-down(pc) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    a {
+      width: 95px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px #1f1f1f;
+      font-size: 12px;
+      background-color: transparent;
+      color: #1f1f1f;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #1f1f1f;
+        color: #fff;
+      }
+    }
+  }
+
+  &__map {
+    iframe {
+      width: 100%;
+      height: 450px;
     }
   }
 }

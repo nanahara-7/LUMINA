@@ -3,37 +3,51 @@
 // ============================================
 
 .p-products {
-  margin-bottom: 120px;
   position: relative;
+  overflow: hidden;
 
   &::after {
     content: "";
     width: 70%;
-    height: 300px;
+    height: 270px;
     background-color: #fafafa;
     display: block;
     position: absolute;
     top: 6vw;
     right: 0;
     z-index: -10;
+
+    @include mq-down(pc) {
+      width: 100%;
+      height: 250px;
+      top: 10vw;
+    }
   }
 
-  @include mq-down(pc) {
-    margin-bottom: 60px;
+  .c-section-title {
+    margin-bottom: 20px;
+
+    @include mq-down(pc) {
+      text-align: center;
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
-    margin-bottom: 60px;
+    width: 70%;
+    padding: 0.5%;
+    margin-left: auto;
 
     @include mq-down(pc) {
-      margin-bottom: 30px;
+      width: 100%;
+      padding: 0 20px 20px;
     }
   }
 
   &__description {
     font-size: 15px;
     line-height: 1.8;
-    margin: 0 0 0 4vw;
+    margin: 0 0 20px 4vw;
 
     @include mq-down(pc) {
       font-size: 14px;
@@ -44,20 +58,21 @@
   &__list-area {
     display: flex;
     margin-bottom: 60px;
+    overflow-x: hidden;
 
     @include mq-down(pc) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 
   &__list {
     display: flex;
     flex-shrink: 0;
-    animation: marquee 20s linear infinite;
+    animation: marquee 40s linear infinite both;
 
     li {
-      width: 300px;
-      margin-right: 20px;
+      width: calc(100vw / 3);
+      margin-right: 0;
       flex-shrink: 0;
 
       @include mq-down(pc) {
@@ -67,11 +82,11 @@
 
       img {
         width: 100%;
-        height: 220px;
+        height: clamp(220px, 30vw, 430px);
         object-fit: cover;
 
         @include mq-down(pc) {
-          height: 150px;
+          height: 180px;
         }
       }
     }
@@ -89,4 +104,118 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+.p-tab {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  overflow-x: auto;
+
+   @include mq-down(tab) {
+    margin-bottom: 10px;
+   }
+
+  &__item {
+    width: 100%;
+    max-width: 170px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #1f1f1f;
+    cursor: pointer;
+    font-size: clamp(12px, 1.2vw, 16px);
+    white-space: nowrap;
+    margin-right: 10px;
+    transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+     @include mq-down(tab) {
+      font-size: 10px;
+      margin-right: 5px;
+     } 
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: #1f1f1f;
+      color: $color-white;
+    }
+
+    &.is-active {
+      background-color: #1f1f1f;
+      color: $color-white;
+    }
+  }
+}
+
+.p-products-list {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 120px;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+
+  @include mq-down(pc) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mq-down(tab) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+  }
+}
+
+.p-products__item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.p-products__info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: $color-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.p-products__item:hover .p-products__info {
+  opacity: 1;
+}
+
+.p-products__name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.p-products__price {
+  font-size: 14px;
+}
+
+.p-products-list.is-active {
+  display: grid;
 }
